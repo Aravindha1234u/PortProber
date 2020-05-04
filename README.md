@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/python-v3.7-blue" alt="Python V3.7">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
   <img src="https://img.shields.io/badge/Status-up-brightgreen" alt="status-up"><br><br>
-  Port Prober is Automated Simple python script for port scan and It can check whether the Provided port of the remote host can be Forwarded or Not.
+  Port Prober is Automated Simple python script for port scan and It can check whether the Provided port of the remote host can be Forwardable or Not.
 </p><br>
 
 ```
