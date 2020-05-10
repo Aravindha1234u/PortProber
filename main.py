@@ -3,22 +3,62 @@ import socket
 import argparse
 import time
 import sys
+import os
 from threading import Thread
 
 HOST = None
 PORT = None
+flag1= False
+flag2= False
 
-def send():
+def usend():
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            s.bind((HOST, PORT))
+        except OSError as e:
+            print(e)
+            exit()
+        except Exception:
+            print("Sorry Something Went Wrong!!")
+            exit()
+        s.listen(4)
+        conn, addr = s.accept()
+        with conn:
+		    #print('Connected to', addr)
+            while True:
+                data = conn.recv(1024)
+                if not data:
+                    break
+                conn.sendall(data)
+		        
+def ureceive():
+	with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+		s.connect((HOST, PORT))
+		s.settimeout(5)
+		try:
+			s.sendall(b'T3cH_W1z4rD')
+			data = s.recv(1024)
+		except socket.timeout:
+			exit()
+	
+	#print('Received', repr(data))
+	if len(repr(data))>0:
+		flag1=True
+
+
+def tsend():
 	with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+		s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		try:
 			s.bind((HOST, PORT))
 		except OSError as e:
-			print("Address already in use")
+			print(e)
 			exit()
 		except Exception:
 			print("Sorry Something Went Wrong!!")
 			exit()
-		s.listen()
+		s.listen(4)
 		conn, addr = s.accept()
 		with conn:
 		    #print('Connected to', addr)
@@ -28,7 +68,7 @@ def send():
 		            break
 		        conn.sendall(data)
 		        
-def receive():
+def treceive():
 	with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 		s.connect((HOST, PORT))
 		s.settimeout(5)
@@ -40,10 +80,7 @@ def receive():
 	
 	#print('Received', repr(data))
 	if len(repr(data))>0:
-		print("Port {} is Forwardable".format(PORT))
-	else:
-		print("Port {} is Not Forwardable".format(PORT))
-
+		flag1=True
 def banner():
 	print("\033[96m")
 	print(r'''      :::::::::   ::::::::  ::::::::: :::::::::::        :::::::::  :::::::::   ::::::::  :::::::::  :::::::::: ::::::::: 
@@ -120,6 +157,7 @@ if __name__=='__main__':
 	print()
 	if args.version==True:
 			print("Version: 1.0.0")
+
 			exit()
 	elif args.pf:
 			if args.host:
@@ -129,7 +167,21 @@ if __name__=='__main__':
 			HOST = ip
 			PORT=args.pf
 			print("Checking for Forwarding")
-			Thread(target = send).start()
-			Thread(target = receive).start()
+			t1=Thread(target = tsend)
+			t2=Thread(target = treceive)
+			t1.start()
+			t2.start()
+			t1.join()
+			t2.join()
+			#t1=Thread(target = usend)
+			#t2=Thread(target = ureceive)
+			#t1.start()
+			#t2.start()
+			t1.join()
+			t2.join()
+			if flag1==True and flag2==True:
+				print("Port {} is Forwardable".format(PORT))
+			else:
+				print("Port {} is Not Forwardable".format(PORT))
 	else:
 		scanner()
