@@ -19,6 +19,9 @@
    +#++:++#+  +#+    +:+ +#++:++#:     +#+            +#++:++#+  +#++:++#:  +#+    +:+ +#++:++#+  +#++:++#   +#++:++#:    
   +#+        +#+    +#+ +#+    +#+    +#+            +#+        +#+    +#+ +#+    +#+ +#+    +#+ +#+        +#+    +#+    
  #+#        #+#    #+# #+#    #+#    #+#            #+#        #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#     
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb37bf83e8cf4018b403348ecea4c5ec)](https://app.codacy.com/manual/Aravindha1234u/PortProber?utm_source=github.com&utm_medium=referral&utm_content=Aravindha1234u/PortProber&utm_campaign=Badge_Grade_Dashboard)
+
 ###         ########  ###    ###    ###            ###        ###    ###  ########  #########  ########## ###    ###    
 
 
