@@ -1,5 +1,6 @@
 <h1 align="center">Port Prober  :mailbox:</h1><br> 
 <p align="center">
+  <img src="https://api.codacy.com/project/badge/Grade/bb37bf83e8cf4018b403348ecea4c5ec" href="https://app.codacy.com/manual/Aravindha1234u/PortProber?utm_source=github.com&utm_medium=referral&utm_content=Aravindha1234u/PortProber&utm_campaign=Badge_Grade_Dashboard" alt="Codacy Badge">
   <img src="https://img.shields.io/badge/build-passed-brightgreen" alt="build status">
   <img src="https://img.shields.io/badge/analyze-passed-rightgreen" alt="Analyze">
   <img src="https://img.shields.io/badge/tests-477%20passed%2C%202%20failed-red" alt="version">
@@ -10,7 +11,7 @@
   <img src="https://img.shields.io/badge/Status-up-brightgreen" alt="status-up"><br><br>
   Port Prober is Automated Simple python script for port scan and It can check whether the Provided port of the remote host can be Forwardable or Not.
 </p><br>
-
+  
 ```
 
       :::::::::   ::::::::  ::::::::: :::::::::::        :::::::::  :::::::::   ::::::::  :::::::::  :::::::::: ::::::::: 
@@ -19,9 +20,6 @@
    +#++:++#+  +#+    +:+ +#++:++#:     +#+            +#++:++#+  +#++:++#:  +#+    +:+ +#++:++#+  +#++:++#   +#++:++#:    
   +#+        +#+    +#+ +#+    +#+    +#+            +#+        +#+    +#+ +#+    +#+ +#+    +#+ +#+        +#+    +#+    
  #+#        #+#    #+# #+#    #+#    #+#            #+#        #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#     
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb37bf83e8cf4018b403348ecea4c5ec)](https://app.codacy.com/manual/Aravindha1234u/PortProber?utm_source=github.com&utm_medium=referral&utm_content=Aravindha1234u/PortProber&utm_campaign=Badge_Grade_Dashboard)
-
 ###         ########  ###    ###    ###            ###        ###    ###  ########  #########  ########## ###    ###    
 
 
