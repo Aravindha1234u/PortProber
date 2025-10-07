@@ -1,2 +1,2 @@
-python-socketio==4.5.1
+python-socketio==5.14.0
 websocket-client==0.53.0
